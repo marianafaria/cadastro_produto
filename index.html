@@ -7,12 +7,16 @@
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 </head>
 
-<link href="/cadastro_produto/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" type="text/css">
-<script src="/cadastro_produto/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/cadastro_produto/js/jquery.min.js" type="text/javascript"></script>
-<script src="/cadastro_produto/js/jquery.mask.min.js" type="text/javascript"></script>
-<script src="/cadastro_produto/js/jquery.maskMoney.js" type="text/javascript"></script>
-<script src="/cadastro_produto/js/validacoes.js" type="text/javascript"></script>
+<body onload="getFromLocalStorage('myTable')">
+
+<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" type="text/css">
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery.mask.min.js" type="text/javascript"></script>
+<script src="js/jquery.maskMoney.js" type="text/javascript"></script>
+<script src="js/validacoes.js" type="text/javascript"></script>
+
+
 
 <form class="form-group" name="formproduct" method="post" onsubmit="return processar('myTable')">
 <fieldset>
@@ -54,19 +58,28 @@
     </div>
   </div>
   
-<div class="form-group">
+  <div class="form-group">
     <label class="col-md-4 control-label" for="produto_value">Valor do Produto: </label>  
     <div class="col-md-6">
     <input id="produto_value" name="produto_value" type="text" placeholder="R$" readonly="true" class="form-control input-md">
     </div>
   </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="btnadd"></label>
-  <div class="col-md-8">
-    <button id="btnadd" name="btnadd" class="btn btn-primary" type="submit" onclick="validar_form()">Adicionar</button>
+  <div class="form-group">
+    <label class="col-md-4 control-label" >Obs: </label>  
+    <div class="col-md-6">
+
+    </div>
   </div>
-</div>
+
+  <div class="form-group">
+    <div class="col-md-8">
+      <button id="btnadd" name="btnadd" class="btn btn-primary" type="submit" onclick="validar_form()">Adicionar</button>
+    </div>
+  </div>
+
+
+
 </form>
 </fieldset>
 
@@ -79,9 +92,14 @@
     <th scope="col">Valor de fabricação</th>
     <th scope="col">Porcentagem de Lucro</th>
     <th scope="col">Valor do produto</th>
+    <th scope="col">Opções</th>
   </tr>
 </thead>
   <tbody id="myTable"></tbody>
 </table>
+
+
+
+</body>
 
 </html>
